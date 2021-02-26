@@ -11,7 +11,7 @@ int main()
     if (!camera.isOpened())
     	camera.open(0);
     
-    for(;;)
+    while(true)
     {
     	Mat frame;
 	camera >> frame;

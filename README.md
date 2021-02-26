@@ -10,4 +10,4 @@ build for nano GPU
 ### Feb 26 2021
 
 1. update to cuda virsion opencv for nvidia gpu
-2. fini hface faceID
+2. finished faceGet, faceTraining,  faceID
