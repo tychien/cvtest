@@ -1,0 +1,3 @@
+/home/nano2/cvtest/DisplayImage/CMakeFiles/rebuild_cache.dir
+/home/nano2/cvtest/DisplayImage/CMakeFiles/DisplayImage.dir
+/home/nano2/cvtest/DisplayImage/CMakeFiles/edit_cache.dir

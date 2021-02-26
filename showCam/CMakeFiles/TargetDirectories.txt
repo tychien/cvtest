@@ -1,0 +1,3 @@
+/home/nano2/cvtest/showCam/CMakeFiles/rebuild_cache.dir
+/home/nano2/cvtest/showCam/CMakeFiles/showCam.dir
+/home/nano2/cvtest/showCam/CMakeFiles/edit_cache.dir
