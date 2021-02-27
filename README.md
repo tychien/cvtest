@@ -11,3 +11,8 @@ build for nano GPU
 
 1. update to cuda virsion opencv for nvidia gpu
 2. finished [faceGet.py](https://github.com/tychien/cvtest/blob/main/faceGet.py), [faceTraining.py](https://github.com/tychien/cvtest/blob/main/faceTraining.py),  [faceID.py](https://github.com/tychien/cvtest/blob/main/faceID.py)
+
+### Feb 27 2021
+
+1. Can't work on object tracking . maybe it's the jetson nano thing. the video just stuck in there.
+2.https://answers.opencv.org/question/94448/module-cv2-has-no-attribute-createbackgroundsubtractormog/
