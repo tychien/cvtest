@@ -29,7 +29,7 @@ while True:
         face_img = cv2.resize(face_img, (400,400))
 
         val = model.predict(face_img)
-        #print('label:{}, conf:{:.lf}'.format(val[0], val[1]))
+        print('label:{}, conf:{:.1f}'.format(val[0], val[1]))
         if val[1]<50:
             cv2.putText(
                     frame ,names[val[0]], (x, y-10), cv2.FONT_HERSHEY_COMPLEX, 1, (255,255,0),3)

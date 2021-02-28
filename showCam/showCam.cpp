@@ -2,6 +2,9 @@
 #include <stdio.h>
 #include <opencv2/videoio.hpp>
 #include <opencv2/highgui.hpp>
+#include <ctime>
+#include <iostream>
+
 
 using namespace cv;
 int main()
@@ -13,10 +16,20 @@ int main()
     
     while(true)
     {
-    	Mat frame;
+	std::clock_t t = clock();
+ 	Mat frame;
 	camera >> frame;
 	namedWindow("frame", WINDOW_AUTOSIZE );
 	imshow("frame", frame);
+	std::clock_t end_t = clock();
+	auto fps = 1000.0*(end_t-t)/CLOCKS_PER_SEC;
+
+	std::cout << "frame rate: " << fps << std::endl;
+
+	if (waitKey(1) ==27){
+		destroyAllWindows();
+		break;
+	}
 
     }
    
