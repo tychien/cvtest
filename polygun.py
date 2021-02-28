@@ -27,7 +27,8 @@ while (True):
         approx = cv2.approxPolyDP(n, 5, True)
         cv2.drawContours(frame, [approx], -1, (255,0,0),5)
         if len(approx) == 4:
-            cv2.drawContours(frame, [approx], -1, (0,0,255) , 5)
+            if cv2.contourArea(approx) >1500:
+                cv2.drawContours(frame, [approx], -1, (0,0,255) , 5)
     
     
     #print('rec edge num:{} '.format(len(approx_rect)))
