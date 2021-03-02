@@ -1,6 +1,6 @@
 import cv2
 
-cap = cv2.VideoCapture('vtest.avi')
+cap = cv2.VideoCapture('/home/nano2/opencv/samples/data/vtest.avi')
 
 bg = None
 

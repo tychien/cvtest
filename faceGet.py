@@ -9,7 +9,7 @@ def saveImage(face_image, index):
     cv2.imwrite(filename, face_image)
     print(filename)
 
-face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
+face_cascade = cv2.CascadeClassifier("/home/nano2/opencv/data/haarcascades_cuda/haarcascade_frontalface_default.xml")
 cap = cv2.VideoCapture(0)
 cv2.namedWindow('frame', cv2.WINDOW_NORMAL)
 

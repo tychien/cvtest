@@ -1,6 +1,6 @@
 import cv2
 
-image = cv2.imread('blox.jpg')
+image = cv2.imread('/home/nano2/opencv/samples/data/blox.jpg')
 
 sift_feature = cv2.xfeatures2d.SIFT_create()
 surf_feature = cv2.xfeatures2d.SURF_create()
