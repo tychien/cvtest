@@ -29,7 +29,9 @@ while (True):
         if len(approx) == 4:
             if cv2.contourArea(approx) >1500:
                 cv2.drawContours(frame, [approx], -1, (0,0,255) , 5)
-    
+        if len(approx) == 3:
+            if cv2.contourArea(approx) >1500:
+                cv2.drawContours(frame, [approx], -1, (0,255,255), 5)
     
     #print('rec edge num:{} '.format(len(approx_rect)))
     #print('edge num:{} '.format(len(approx_1)))
