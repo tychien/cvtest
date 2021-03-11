@@ -33,6 +33,7 @@ while (True):
         p2 = (x+w+4, y+h+4)
 
         out = cv2.bitwise_and(hsv,hsv,mask=mask)
+        cv2.putText(frame, 'x={} ,y={}'.format(x+w/2,y+h/2),(x,y-10),cv2.FONT_HERSHEY_COMPLEX,1,(255,255,0),3)
         cv2.rectangle(frame, p1, p2, (0,255,255),2)
         cv2.rectangle(hsv, p1, p2, (0,255,255),2)
         cv2.rectangle(out, p1, p2, (0,255,255),2)
