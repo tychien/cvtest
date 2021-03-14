@@ -103,7 +103,7 @@ def main():
             
             cv2.putText(frame, 'x={} ,y={},dep={:03.3f}m'.format(centroidx,centroidy,depth),(x,y-10),cv2.FONT_HERSHEY_COMPLEX,0.5,(0,255,255),2)
             cv2.putText(frame, 'x={:03.3f}m, y={:03.3f}m, r={:03.3f}m'.format(-x_in_mm,y_in_mm,d_prl),(x,y-30),cv2.FONT_HERSHEY_COMPLEX, 0.5, (0,255,255),2)
-            cv2.rectangle(frame, (x,y-35),(x+500,y))
+            cv2.rectangle(frame, (x,y-35),(x+500,y),(0,0,0),1)
             cv2.rectangle(frame, p1, p2, (0,255,255),2)
             cv2.rectangle(hsv, p1, p2, (0,255,255),2)
             cv2.rectangle(out, p1, p2, (0,255,255),2)
