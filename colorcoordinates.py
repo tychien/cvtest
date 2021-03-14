@@ -100,7 +100,7 @@ def main():
             x_in_mm = d_prl*math.tan(0.5*fovh)*(1-(x/(0.5*xpx)))
             y_in_mm = d_prl*math.tan(0.5*fovv)*(1-(y/(0.5*ypx)))
 
-            cv2.rectangle(frame, (x,y-50),(x+550,y),(0,0,0),-1)
+            cv2.rectangle(frame, (x,y-60),(x+550,y),(0,0,0),-1)
             cv2.putText(frame, 'x={} ,y={},dep={:03.3f}m'.format(centroidx,centroidy,depth),(x,y-10),cv2.FONT_HERSHEY_COMPLEX,1,(0,255,255),2)
             cv2.putText(frame, 'x={:03.3f}m, y={:03.3f}m, r={:03.3f}m'.format(-x_in_mm,y_in_mm,d_prl),(x,y-30),cv2.FONT_HERSHEY_COMPLEX, 1, (0,255,255),2)
             
