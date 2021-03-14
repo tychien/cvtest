@@ -27,15 +27,23 @@ build for nano GPU
 _depth = depth
 if d is been transformed, 
 
-v = 
+v =  arctan(  ((1/2*ypx)-y)  / (1/2*ypx) * tan(1/2*fovv)  ) 
+
+h =  arctan(  ((1/2*xpx)-x)  / (1/2*xpx) * tan(1/2*fovh)  ) 
+
 d_real = depth*cos(v)*cos(h)
 
-fov = field of view
-ypx = y in pixel
-xpx = x in pixel
+fovh = horizontal field of view
 
-x_in_meter = depth * tan(1/2*fov) * (1 - (x/(1/2*xpx)))
-y_in_meter = depth * tan(1/2*fov) * (1 - (y/(1/2*ypx)))
+fovv = virtical field of view
+
+ypx = y in pixel 540 = 1080/2
+
+xpx = x in pixel 
+
+x_in_meter = depth * tan(1/2*fovh) * (1 - (x/(1/2*xpx)))
+
+y_in_meter = depth * tan(1/2*fovv) * (1 - (y/(1/2*ypx)))
 
 
 
