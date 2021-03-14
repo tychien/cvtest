@@ -37,9 +37,9 @@ fovh = horizontal field of view
 
 fovv = virtical field of view
 
-ypx = y in pixel 540 = 1080/2
+ypx = y in pixel = 540 = 1080/2
 
-xpx = x in pixel 
+xpx = x in pixel = 960 = 1920/2
 
 x_in_meter = depth * tan(1/2*fovh) * (1 - (x/(1/2*xpx)))
 
