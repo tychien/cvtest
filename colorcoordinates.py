@@ -6,8 +6,8 @@ import math
 def main():
 
 
-    #color = ((100,150,0),(140,255,255)) #blue
-    color = ((0,120,70),(10,255,255)) #red
+    color = ((100,150,0),(140,255,255)) #blue
+    #color = ((0,120,70),(10,255,255)) #red
     #color = ((16,59,0),(47,255,255)) #yellow
     lower = np.array(color[0], dtype="uint8")
     upper = np.array(color[1], dtype="uint8")
