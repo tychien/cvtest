@@ -27,17 +27,17 @@ while True:
     
     image = image_ocv
 
-    sift_feature = cv2.xfeatures2d.SIFT_create()
+    #sift_feature = cv2.xfeatures2d.SIFT_create()
     #surf_feature = cv2.xfeatures2d.SURF_create()
-    #orb_feature  = cv2.ORB_create()
+    orb_feature  = cv2.ORB_create()
 
-    sift_kp = sift_feature.detect(image)
+    #sift_kp = sift_feature.detect(image)
     #surf_kp = surf_feature.detect(image)
-    #orb_kp  = orb_feature.detect(image)
+    orb_kp  = orb_feature.detect(image)
 
-    sift_out= cv2.drawKeypoints(image, sift_kp, None)
+    #sift_out= cv2.drawKeypoints(image, sift_kp, None)
     #surf_out= cv2.drawKeypoints(image, surf_kp, None)
-    #orb_out = cv2.drawKeypoints(image, orb_kp, None)
+    orb_out = cv2.drawKeypoints(image, orb_kp, None, flags=cv2.DRAW_MATCHES_FLAGS_DRAW_RICH_KEYPOINTS)
 
 
     #image = cv2.vconcat((cv2.hconcat([image, sift_out]),cv2.hconcat([surf_out, orb_out])))
