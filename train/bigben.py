@@ -1,3 +1,4 @@
+import pyzed.sl as sl
 import cv2
 import numpy as np 
 import time 
@@ -33,17 +34,38 @@ def drawBox(image, classes, confs, boxes, names, colors):
         cv2.putText(new_image, label, (x,y-10),cv2.FONT_HERSHEY_SIMPLEX,0.7,color, 2)
     return new_image
 
+
+#zed = sl.Camera() 
+
+#input_type = sl.InputType()
+#init = sl.InitParameters(input_t = input_type)
+#init.camera_resolution = sl.RESOLUTION.HD1080 
+#err = zed.open(init)
+
+#image_size = zed.get_camera_information().camera_resolution
+#image_size.width = image_size.width /2
+#image_size.height = image_size.height/2
+
+#image_zed = sl.Mat(image_size.width, image_size.height, sl.MAT_TYPE.F32_C1)
+
+
 model, names, colors = initNet()
+#cap = image_zed
 cap = cv2.VideoCapture(0)
 ratio = cap.get(cv2.CAP_PROP_FRAME_WIDTH)/cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
-WIDTH = 800
+WIDTH = 1920
 HEIGHT= int(WIDTH/ratio)
 
 
 while True:
     begin_time = time.time()
+#    err = zed.grab() 
+#    zed.retrieve_image(image_zed, sl.VIEW.LEFT)
+#    frame = image_zed.get_data()
     ret, frame = cap.read()
-    frame = cv2.resize(frame, (WIDTH, HEIGHT))
+
+
+    frame = cv2.resize(frame, (WIDTH,HEIGHT ))
     classes, confs, boxes = nnProcess(frame, model)
     frame = drawBox(frame, classes, confs, boxes, names, colors)
 
