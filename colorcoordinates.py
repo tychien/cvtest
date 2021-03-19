@@ -31,22 +31,20 @@ def main():
 
     image_zed = sl.Mat(image_size.width, image_size.height, sl.MAT_TYPE.U8_C4)
     
-    
-    
-    depth_zed = sl.Mat(image_size.width, image_size.height, sl.MAT_TYPE.F32_C1)
-
+    depth_zed = sl.Mat(image_size.width, image_size.height, sl.MAT_TYPE.U8_C4)
+    #point_cloud = sl.Mat()
     while True:
         err = zed.grab()
 
         if zed.grab() == sl.ERROR_CODE.SUCCESS :
-            zed.retrieve_image(image_zed, sl.VIEW.LEFT)
-            zed.retrieve_measure(depth_zed, sl.MEASURE.DEPTH)
+            zed.retrieve_image(image_zed, sl.VIEW.LEFT,sl.MEM.CPU ,image_size)
+            zed.retrieve_measure(depth_zed, sl.MEASURE.DEPTH, sl.MEM.CPU, image_size)
             image_ocv = image_zed.get_data()
             depth_ocv = depth_zed.get_data()
-            
+
             print(depth_ocv[int(len(depth_ocv)/2)][int(len(depth_ocv[0])/2)])
-            print('depth_ocv/2= {}'.format(int(len(depth_ocv)/2)))  #y
-            print('depth_ocv/2= {}'.format(int(len(depth_ocv[0])/2))) #x
+#            print('depth_ocv/2= {}'.format(int(len(depth_ocv)/2)))  #y
+#            print('depth_ocv/2= {}'.format(int(len(depth_ocv[0])/2))) #x
             
             a= math.pi /4 # 45 degrees
             b = 45*math.pi/180 # = 0.07853981634
@@ -82,10 +80,10 @@ def main():
             vfn = ((0.5*ypx)-centroidy)/(0.5*ypx) * math.tan(0.5*fovv) 
             hfn = ((0.5*xpx)-centroidx)/(0.5*xpx) * math.tan(0.5*fovv) 
 
-            print('vfn={}, hfn={}'.format(abs(vfn),abs(hfn)))
+#            print('vfn={}, hfn={}'.format(abs(vfn),abs(hfn)))
             atanv = math.atan(vfn)*180/math.pi
             atanh = math.atan(hfn)*180/math.pi
-            print('atanh={},atanv={}'.format(atanh,atanv))
+#            print('atanh={},atanv={}'.format(atanh,atanv))
 #            v = math.atan(  ((0.5*ypx)-centroidy)/(0.5*ypx) * math.tan(0.5*fovv)    )
 #            h = math.atan(  ((0.5*xpx)-centroidx)/(0.5*xpx) * math.tan(0.5*fovh)    )
             
