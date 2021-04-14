@@ -1,0 +1,26 @@
+<annotation>
+	<folder>JPEGImages</folder>
+	<filename>0026.jpg</filename>
+	<path>/home/tychien/Downloads/dolphinpic/train/VOCdevkit/VOC2021/JPEGImages/0026.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>303</width>
+		<height>99</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>fin</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>71</xmin>
+			<ymin>21</ymin>
+			<xmax>288</xmax>
+			<ymax>94</ymax>
+		</bndbox>
+	</object>
+</annotation>
