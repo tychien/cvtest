@@ -2,7 +2,8 @@ import cv2
 import numpy as np
 
 #color = ((100,150,0),(140,255,255)) #blue
-color = ((0,120,70),(10,255,255)) #red
+#color = ((0,120,70),(10,255,255)) #red
+color = ((115,0,47),(180,152,255)) #whitedolphin
 #color = ((16,59,0),(47,255,255)) #yellow
 lower = np.array(color[0], dtype="uint8")
 upper = np.array(color[1], dtype="uint8")

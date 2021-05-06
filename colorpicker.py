@@ -1,7 +1,7 @@
 from colorfilters import HSVFilter
 import cv2 
 
-img = cv2.imread('dolphin6.jpg')
+img = cv2.imread('IMG_8617.JPG')
 window = HSVFilter(img)
 window.show()
 
