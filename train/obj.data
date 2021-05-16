@@ -1,5 +1,0 @@
-classes = 1
-train = 2021_train.txt
-valid = 2021_val.txt
-names = obj.names
-backup = backup
