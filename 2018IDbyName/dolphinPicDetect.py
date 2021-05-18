@@ -35,7 +35,7 @@ def drawBox(image, classes, confs, boxes, names, colors):
 
 model, names, colors = initNet()
 
-image = cv2.imread('/home/tychien/2018IDbyName/Adobe/Good/CHS20180315_02_XN_IMG_0020.jpg') 
+image = cv2.imread('/home/tychien/2018IDbyName/Adobe/masked/CH20180606_02_HH_IMG_5849.jpg') 
 width, height, channel = image.shape 
 ratio = float(width)/float(height)
 WIDTH = 1280 
