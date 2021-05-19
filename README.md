@@ -52,4 +52,6 @@ y_in_meter = depth * tan(1/2*fovv) * (1 - (y/(1/2*ypx)))
 #### Yolo AdobeAtooLMR 
 Can only detect some masked picture (because we trained with masked picture, more worse, only few pictures can be detected) 
 
-
+Will try 
+1. yolo trained with background. 
+1. yolo trained with masked pictures but try to pick some more detailed pictures.
