@@ -46,4 +46,8 @@ x_in_meter = depth * tan(1/2*fovh) * (1 - (x/(1/2*xpx)))
 y_in_meter = depth * tan(1/2*fovv) * (1 - (y/(1/2*ypx)))
 
 
+### May 19 2021 
+#### Yolo AdobeAtooLMR 
+Can only detect some masked picture (because we trained with masked picture, more worse, only few pictures can be detected) 
+
 
