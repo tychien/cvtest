@@ -34,8 +34,13 @@ def drawBox(image, classes, confs, boxes, names, colors):
 
 
 model, names, colors = initNet()
+<<<<<<< HEAD
 cap = cv2.VideoCapture(0) #from webcam
 #cap = cv2.VideoCapture('/home/tychien/Downloads/AtooToufouWind.mov')
+=======
+#cap = cv2.VideoCapture(0) #from webcam
+cap = cv2.VideoCapture('/home/tychien/Downloads/AtooDoufouWind_test.mov')
+>>>>>>> b6ee12fbdada0764d827be02a3afc363ff6bdecf
 print(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 ratio = cap.get(cv2.CAP_PROP_FRAME_WIDTH) / cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
