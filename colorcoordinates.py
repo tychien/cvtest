@@ -2,6 +2,7 @@ import pyzed.sl as sl
 import cv2
 import numpy as np
 import math
+import time
 
 def main():
 
@@ -24,7 +25,9 @@ def main():
 
 
     err = zed.open(init)
-    
+   
+    runtime = sl.RuntimeParameters()
+    runtime.sensing_mode = sl.SENSING_MODE.STANDARD
     image_size = zed.get_camera_information().camera_resolution
     image_size.width = image_size.width /2
     image_size.height = image_size.height /2
@@ -34,7 +37,8 @@ def main():
     depth_zed = sl.Mat(image_size.width, image_size.height, sl.MAT_TYPE.U8_C4)
     #point_cloud = sl.Mat()
     while True:
-        err = zed.grab()
+        start_time = time.time()
+        err = zed.grab(runtime)
 
         if zed.grab() == sl.ERROR_CODE.SUCCESS :
             zed.retrieve_image(image_zed, sl.VIEW.LEFT,sl.MEM.CPU ,image_size)
@@ -78,7 +82,7 @@ def main():
 
 
             vfn = ((0.5*ypx)-centroidy)/(0.5*ypx) * math.tan(0.5*fovv) 
-            hfn = ((0.5*xpx)-centroidx)/(0.5*xpx) * math.tan(0.5*fovv) 
+            hfn = ((0.5*xpx)-centroidx)/(0.5*xpx) * math.tan(0.5*fovh) 
 
 #            print('vfn={}, hfn={}'.format(abs(vfn),abs(hfn)))
             atanv = math.atan(vfn)*180/math.pi
@@ -107,6 +111,8 @@ def main():
             cv2.rectangle(out, p1, p2, (0,255,255),2)
             #frame = cv2.hconcat([frame,hsv, out])
         cv2.imshow('frame',frame)
+        fps = 1/(time.time()-start_time)
+        print('fps:{:.1f}'.format(fps))
         #cv2.imshow("Image", image_ocv)
         if cv2.waitKey(1) ==27:
             cv2.destroyAllWindows()

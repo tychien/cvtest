@@ -2,6 +2,7 @@ import sys
 import numpy as np
 import pyzed.sl as sl
 import cv2
+import time
 
 help_string = "[s] Save side by side image [d] Save Depth, [n] Change Depth format, [p] Save Point Cloud, [m] Change Point Cloud format, [q] Quit"
 prefix_point_cloud = "Cloud_"
@@ -149,6 +150,7 @@ def main() :
 
     key = ' '
     while key != 113 :
+        start_time = time.time()
         err = zed.grab(runtime)
         if err == sl.ERROR_CODE.SUCCESS :
             # Retrieve the left image, depth image in the half-resolution
@@ -164,7 +166,8 @@ def main() :
 
             cv2.imshow("Image", image_ocv)
             cv2.imshow("Depth", depth_image_ocv)
-
+            fps = 1/(time.time()-start_time)
+            print('fps:{:.1f}'.format(fps))
             key = cv2.waitKey(10)
 
             process_key_event(zed, key)

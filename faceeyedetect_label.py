@@ -1,20 +1,41 @@
+import pyzed.sl as sl
 import cv2
 import time
 
-cap = cv2.VideoCapture(0)
+#cap = cv2.VideoCapture(0)
+zed = sl.Camera()
 
-face_cascade    = cv2.CascadeClassifier('/home/nano2/opencv/data/haarcascades_cuda/haarcascade_frontalface_default.xml')
-eye_cascade     = cv2.CascadeClassifier('/home/nano2/opencv/data/haarcascades_cuda/haarcascade_eye.xml')
+input_type = sl.InputType()
+init = sl.InitParameters(input_t = input_type)
+init.camera_resolution = sl.RESOLUTION.HD1080
 
-if cap.isOpened() == False:
-    cap.open()
+err = zed.open(init)
+
+image_size = zed.get_camera_information().camera_resolution
+image_size.width = image_size.width /2
+image_size.height = image_size.height /2
+
+image_zed = sl.Mat(image_size.width, image_size.height, sl.MAT_TYPE.U8_C4)
+
+
+
+
+face_cascade    = cv2.CascadeClassifier('/home/nano1/opencv/data/haarcascades_cuda/haarcascade_frontalface_default.xml')
+eye_cascade     = cv2.CascadeClassifier('/home/nano1/opencv/data/haarcascades_cuda/haarcascade_eye.xml')
+
+#if cap.isOpened() == False:
+#    cap.open()
 
 while (True):
     
     start_time  = time.time()
 
-    ret, frame  = cap.read()
-    frame = cv2.flip(frame,1)
+#    ret, frame  = cap.read()
+    err = zed.grab() 
+    if zed.grab() == sl.ERROR_CODE.SUCCESS :
+        zed.retrieve_image(image_zed, sl.VIEW.LEFT, sl.MEM.CPU, image_size)
+        frame = image_zed.get_data()
+#    frame = cv2.flip(frame,1)
 
     gray        = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
@@ -41,6 +62,6 @@ while (True):
         break
 
 
-cap.release()
+#cap.release()
 
 cv2.destroyAllWindows()

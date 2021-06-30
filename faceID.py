@@ -1,10 +1,10 @@
 import cv2
 
 model = cv2.face.LBPHFaceRecognizer_create()
-model.read('/home/nano2/cvtest/faces.data')
+model.read('/home/nano1/cvtest/faces.data')
 print('loading training data finished')
 
-face_cascade = cv2.CascadeClassifier('/home/nano2/opencv/data/haarcascades_cuda/haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier('/home/nano1/opencv/data/haarcascades_cuda/haarcascade_frontalface_default.xml')
 cap = cv2.VideoCapture(0)
 if cap.isOpened() == False:
     cap.open()
