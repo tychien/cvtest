@@ -4,7 +4,7 @@ import time
 
 def initNet():
     CONFIG = 'yolov4-tiny-myobj.cfg'
-    WEIGHT = 'yolov4-tiny-myobj_best.weights'
+    WEIGHT = 'yolov4-tiny-AdobeAtooLMR_best.weights'
     NAMES = 'obj.names'
 
     with open(NAMES, 'r') as f:
@@ -35,7 +35,7 @@ def drawBox(image, classes, confs, boxes, names, colors):
 
 model, names, colors = initNet()
 cap = cv2.VideoCapture(0) #from webcam
-#cap = cv2.VideoCapture('/home/tychien/Downloads/AtooToufouWind.mov')
+#cap = cv2.VideoCapture('/home/tychien/cvtest/2018IDbyName/AdobeTestVid2.mov')
 print(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 ratio = cap.get(cv2.CAP_PROP_FRAME_WIDTH) / cap.get(cv2.CAP_PROP_FRAME_HEIGHT)

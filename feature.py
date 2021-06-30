@@ -1,6 +1,9 @@
 import cv2
 
-image = cv2.imread('/home/nano2/opencv/samples/data/blox.jpg')
+image = cv2.imread('/home/tychien/Downloads/CHN20180402_01_FF_IMG_5123.jpg')
+width, height, channel = image.shape
+ratio = float(width) / float(height)
+image = cv2.resize(image, (512, int(512 * ratio)))
 
 sift_feature = cv2.xfeatures2d.SIFT_create()
 surf_feature = cv2.xfeatures2d.SURF_create()
