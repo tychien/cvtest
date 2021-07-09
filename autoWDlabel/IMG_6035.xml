@@ -1,0 +1,38 @@
+<annotation>
+	<folder>JPEGImages</folder>
+	<filename>IMG_6035.JPG</filename>
+	<path>/home/tychien/Desktop/Original photo/CH/CHN/CHN20180404_01_XN/IMG_6035.JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>5184</width>
+		<height>3456</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Dolphin</name>
+		<pose>Unspecified</pose>
+		<truncated>0</trucated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1033</xmin>
+			<ymin>1819</ymin>
+			<xmax>1499</xmax>
+			<ymax>1982</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Dolphin</name>
+		<pose>Unspecified</pose>
+		<truncated>0</trucated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2260</xmin>
+			<ymin>1759</ymin>
+			<xmax>2787</xmax>
+			<ymax>1974</ymax>
+		</bndbox>
+	</object>
+</annotation>

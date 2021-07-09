@@ -1,0 +1,26 @@
+<annotation>
+	<folder>JPEGImages</folder>
+	<filename>IMG_1263 (copy).JPG</filename>
+	<path>/home/tychien/Desktop/Original photo/CH/CH/CH20180713_01_KP/IMG_1263 (copy).JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>5472</width>
+		<height>3648</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Dolphin</name>
+		<pose>Unspecified</pose>
+		<truncated>0</trucated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1989</xmin>
+			<ymin>1794</ymin>
+			<xmax>2939</xmax>
+			<ymax>2439</ymax>
+		</bndbox>
+	</object>
+</annotation>

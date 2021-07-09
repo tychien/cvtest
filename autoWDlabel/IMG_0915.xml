@@ -1,0 +1,38 @@
+<annotation>
+	<folder>JPEGImages</folder>
+	<filename>IMG_0915.JPG</filename>
+	<path>/home/tychien/Desktop/Original photo/TC/TC20181118_01_HH/IMG_0915.JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>5184</width>
+		<height>3456</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Dolphin</name>
+		<pose>Unspecified</pose>
+		<truncated>0</trucated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2937</xmin>
+			<ymin>1145</ymin>
+			<xmax>3652</xmax>
+			<ymax>1450</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Dolphin</name>
+		<pose>Unspecified</pose>
+		<truncated>0</trucated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1052</xmin>
+			<ymin>1316</ymin>
+			<xmax>1808</xmax>
+			<ymax>1662</ymax>
+		</bndbox>
+	</object>
+</annotation>

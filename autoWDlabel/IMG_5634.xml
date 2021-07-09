@@ -1,0 +1,26 @@
+<annotation>
+	<folder>JPEGImages</folder>
+	<filename>IMG_5634.JPG</filename>
+	<path>/home/tychien/Desktop/Original photo/CH/CHS/CHS20180410_02_KP/IMG_5634.JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>5472</width>
+		<height>3648</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Dolphin</name>
+		<pose>Unspecified</pose>
+		<truncated>0</trucated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2274</xmin>
+			<ymin>2019</ymin>
+			<xmax>2581</xmax>
+			<ymax>2150</ymax>
+		</bndbox>
+	</object>
+</annotation>
