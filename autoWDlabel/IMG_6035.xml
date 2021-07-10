@@ -14,7 +14,7 @@
 	<object>
 		<name>Dolphin</name>
 		<pose>Unspecified</pose>
-		<truncated>0</trucated>
+		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>1033</xmin>
@@ -26,7 +26,7 @@
 	<object>
 		<name>Dolphin</name>
 		<pose>Unspecified</pose>
-		<truncated>0</trucated>
+		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
 			<xmin>2260</xmin>

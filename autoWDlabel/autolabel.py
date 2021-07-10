@@ -60,7 +60,7 @@ def getPicSpectAndDetect():
 
 def writeAnnotation(picturefile,picturepath,picspect):
     filename = picturefile.split('.')[-2]+'.xml'
-    with open(filename,'a') as f:
+    with open(filename,'w') as f:
         f.write('<annotation>\n'+ 
                 '\t<folder>JPEGImages</folder>\n'+
                 '\t<filename>'+picturefile+'</filename>\n'+ 
@@ -80,7 +80,7 @@ def writeAnnotation(picturefile,picturepath,picspect):
             f.write('\t<object>\n'+
                     '\t\t<name>'+name+'</name>\n'+
                     '\t\t<pose>Unspecified</pose>\n'+
-                    '\t\t<truncated>0</trucated>\n'+
+                    '\t\t<truncated>0</truncated>\n'+
                     '\t\t<difficult>0</difficult>\n'+
                     '\t\t<bndbox>\n'+
                     '\t\t\t<xmin>'+str(x)+'</xmin>\n'+
