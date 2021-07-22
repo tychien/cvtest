@@ -1,12 +1,10 @@
-import os, re, cv2 
+import os, re, cv2, sys, time
 import numpy as np
 
 
-annotation_dir = '/home/tychien/cvtest/autoWDlabel/'  
+annotation_dir = '/home/tychien/ChineseWhiteDolphin/findDolphin/VOCdevkit/VOC2018/Annotations'  
 listname = '/home/tychien/cvtest/sortandshuffle/randompic.txt'
 o_dir = open(listname, 'r')
-picturefile = 'shit.jpg'
-picturepath = '/home/tychien/cvtest/'+picturefile
 
 
 def initNet():
@@ -23,12 +21,10 @@ def initNet():
         model.setInputSwapRB(True)
         return model, names, colors
 
+
 def nnProcess(image, model):
     classes, confs, boxes = model.detect(image, 0.7,0.3)
     return classes, confs, boxes
-
-
-
 
 
 def picspect(filename):
@@ -46,17 +42,23 @@ def getPicSpectAndDetect():
         arr = o.readlines()
         counter = 0
         while arr:
-            if counter <10:
+            if counter <1000:
+                starttime = time.time()
                 filename = arr.pop()
                 filename = re.sub(r'\n','',filename)
                 spect = picspect(filename)
                 name = filename.split('/')[-1]
                 print(name)
-                print(filename)
+                #print(filename)
                 writeAnnotation(name,filename,picspect(filename))
                 counter+=1
+                timeleft = (1000-counter)*(time.time()-starttime)
+                
+                print(str(counter/1000*100)+'%, '+'{:06.3f} s'.format(timeleft))
+                #sys.stdout.write('\r%d%%' % ((counter/1000)*100))
             else: 
                 break
+
 
 def writeAnnotation(picturefile,picturepath,picspect):
     filename = picturefile.split('.')[-2]+'.xml'

@@ -1,0 +1,60 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+  <model name="dolphin">
+    <link name="link">
+      <inertial>
+        <pose>0 -0.1 0.55 0 0 0</pose>   
+        <mass>100.0</mass>
+        <inertia> <!-- inertias are tricky to compute -->
+          <!-- http://gazebosim.org/tutorials?tut=inertia&cat=build_robot -->
+          <ixx>5.0</ixx>       <!-- for a box: ixx = 0.083 * mass * (y*y + z*z) -->
+          <ixy>0.0</ixy>         <!-- for a box: ixy = 0 -->
+          <ixz>0.0</ixz>         <!-- for a box: ixz = 0 -->
+          <iyy>5.0</iyy>       <!-- for a box: iyy = 0.083 * mass * (x*x + z*z) -->
+          <iyz>0.0</iyz>         <!-- for a box: iyz = 0 -->
+          <izz>5.0</izz>       <!-- for a box: izz = 0.083 * mass * (x*x + y*y) -->
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <pose>0 0.2 0.6 -0.2 0 0</pose>   
+        <geometry>
+          <box>
+            <size>1.0 2.5 0.9</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+            <mesh>
+                <uri>model://Sonstiges+-+Delphin/model.dae</uri>
+                <scale>1 1 1</scale>
+            </mesh> 
+        </geometry>
+        <material>
+            <script>
+                <uri>model://Sonstiges+-+Delphin/materials/scripts</uri>
+                <uri>model://Sonstiges+-+Delphin/materials/textures</uri>
+                <name>dolphinMat/Diffuse</name>
+            </script>
+        </material>
+      </visual>
+    </link>
+    <plugin name="BuoyancyPlugin" filename="libbuoyancy_gazebo_plugin.so">
+    <!-- a viscous liquid -->
+      <wave_model>ocean_waves</wave_model>
+      <fluid_density>1000</fluid_density> 
+      <fluid_level>1</fluid_level> 
+      <linear_drag>25.0</linear_drag>
+      <angular_drag>2.0</angular_drag> 
+      <buoyancy name="buoyancy_body">
+        <link_name>link</link_name> 
+        <pose>0 0 0.2 0 0 0</pose> 
+        <geometry> 
+          <box> 
+            <size>1.5 1.5 0.3</size> 
+          </box> 
+        </geometry> 
+      </buoyancy> 
+    </plugin>
+  </model>
+</sdf>
