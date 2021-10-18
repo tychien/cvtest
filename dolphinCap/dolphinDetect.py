@@ -54,7 +54,7 @@ upper5 = np.array(color5[1], dtype="uint8")
 
 model, names, colors = initNet()
 #cap = cv2.VideoCapture(0) #from webcam 
-cap = cv2.VideoCapture('/home/tychien/Downloads/dolphinPTS.mp4')
+cap = cv2.VideoCapture('/home/tychien/Videos/screencast_00000.mp4')
 print(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 ratio = cap.get(cv2.CAP_PROP_FRAME_WIDTH) / cap.get(cv2.CAP_PROP_FRAME_HEIGHT) 

@@ -19,14 +19,15 @@ def initNet():
     
 def nnProcess(image, model): 
     #classes, confs, boxes = model.detect(image, 0.6,0.3)
-    classes, confs, boxes = model.detect(image, 0.65,0.3)
+    classes, confs, boxes = model.detect(image, 0.01,0.3)
     return classes, confs, boxes 
 
 def drawBox(image, classes, confs, boxes, names, colors):
     new_image = image.copy()
     for(classid, conf, box) in zip(classes, confs, boxes):
-        x,y,w,h=box 
-        label = '{}: {:.2f}'.format(names[int(classid)],float(conf))
+        x,y,w,h=box
+        area = w*h
+        label = '{}: {:.2f}, {}'.format(names[int(classid)],float(conf),int(area))
         color = colors[int(classid)]
         cv2.rectangle(new_image, (x,y), (x+w, y+h),color,2)
         cv2.putText(new_image, label, (x,y-10),cv2.FONT_HERSHEY_SIMPLEX, 0.7,color,2) 
@@ -54,7 +55,7 @@ upper5 = np.array(color5[1], dtype="uint8")
 
 model, names, colors = initNet()
 #cap = cv2.VideoCapture(0) #from webcam 
-cap = cv2.VideoCapture('/home/tychien/Downloads/dolphinPTS.mp4')
+cap = cv2.VideoCapture('/home/tychien/Downloads/PTS1.mp4')
 print(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 ratio = cap.get(cv2.CAP_PROP_FRAME_WIDTH) / cap.get(cv2.CAP_PROP_FRAME_HEIGHT) 

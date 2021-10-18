@@ -50,19 +50,12 @@ image_zed = sl.Mat(image_size.width, image_size.height, sl.MAT_TYPE.U8_C4)
 
 
 model, names, colors = initNet()
-#cap = image_zed
-#cap = cv2.VideoCapture(0)
-#ratio = cap.get(cv2.CAP_PROP_FRAME_WIDTH)/cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
-#WIDTH = 1920
-#HEIGHT= int(WIDTH/ratio)
-
 
 while True:
     begin_time = time.time()
     err = zed.grab() 
     zed.retrieve_image(image_zed, sl.VIEW.LEFT,sl.MEM.CPU, image_size)
     frame = image_zed.get_data()
-#    ret, frame = cap.read()
 
 
     #frame = cv2.resize(frame, (WIDTH,HEIGHT ))
