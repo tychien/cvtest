@@ -4,7 +4,7 @@ import time
 
 def initNet():
     CONFIG = 'yolov4-tiny-myobj.cfg'
-    WEIGHT = 'yolov4-tiny-myobj_best.weights'
+    WEIGHT = 'yolov4-tiny-gazebo_best.weights'
     NAMES = 'obj.names'
     
     with open(NAMES, 'r') as f:
