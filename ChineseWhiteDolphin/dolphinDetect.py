@@ -4,8 +4,8 @@ import time
 
 def initNet():
     CONFIG = 'yolov4-tiny-myobj.cfg'
-    #WEIGHT = 'yolov4-tiny-myobj_best.weights'
-    WEIGHT = 'yolov4-gaztop.weights'
+    WEIGHT = 'yolov4-tiny-myobj_best.weights'
+    #WEIGHT = 'yolov4-gaztop.weights'
     NAMES = 'obj.names'
     
     with open(NAMES, 'r') as f:
@@ -56,8 +56,8 @@ upper5 = np.array(color5[1], dtype="uint8")
 
 model, names, colors = initNet()
 #cap = cv2.VideoCapture(0) #from webcam 
-cap = cv2.VideoCapture('/home/tychien/Downloads/topdowndolphin.mp4')
-#cap = cv2.VideoCapture('/home/tychien/Downloads/PTS2.mp4')
+#cap = cv2.VideoCapture('/home/tychien/Downloads/topdowndolphin.mp4')
+cap = cv2.VideoCapture('/home/tychien/Downloads/0918X36/1/10030153.mp4')
 print(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 ratio = cap.get(cv2.CAP_PROP_FRAME_WIDTH) / cap.get(cv2.CAP_PROP_FRAME_HEIGHT) 
